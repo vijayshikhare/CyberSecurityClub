@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Blog</title>
+
+  <!-- CSS Link should be in <head> -->
+  <link rel="stylesheet" href="blog.css" />
+</head>
+<body>
+
+  <!-- Blog Section -->
+  <section class="blog-section">
+    <div class="blog-header">
+      <h2>Tech Articles & Tutorials</h2>
+      <input type="text" id="searchInput" placeholder="Search blog articles..." onkeyup="filterBlogs()" />
+    </div>
+
+    <div class="blog-container" id="blogContainer">
+      <!-- Blog Article -->
+      <div class="blog-article">
+        <h3>1. What is SQL Injection?</h3>
+        <p class="blog-text">SQL Injection is a vulnerability...</p>
+
+        <div class="snippet-container">
+          <div class="snippet-header">
+            <span class="language-tag">SQL</span>
+            <button class="copy-btn" onclick="copySnippet(this)">📋</button>
+            <!-- <p>Developed by Vijay shikhre</p> -->
+            
+          </div>
+          <pre><code class="code-content">
+SELECT * FROM users WHERE email = 'user@example.com';
+          </code></pre>
+        </div>
+
+        <p class="blog-text">Always use parameterized queries to prevent attacks...</p>
+      </div>
+
+      <!-- Add more blog-article divs here -->
+    </div>
+
+    <!-- Show More Button -->
+    <div class="show-more-wrapper">
+      <button id="showMoreBtn" onclick="showMoreBlogs()">Show More</button>
+    </div>
+  </section>
+
+  <!-- JS Link goes before closing </body> -->
+  <script src="blog.js" defer></script>
+</body>
+</html>

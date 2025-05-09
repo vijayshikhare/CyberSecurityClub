@@ -1,0 +1,244 @@
+/* --- Blog Section --- */
+.blog-section {
+  background-color: rgb(0, 0, 0);
+  color: #00bcd4;
+  padding: 80px 100px;
+}
+
+.blog-header {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.blog-header h2 {
+  font-size: 2.5em;
+  margin-bottom: 15px;
+  color: #00bcd4;
+}
+
+#searchInput {
+  width: 100%;
+  max-width: 500px;
+  padding: 12px;
+  font-size: 1em;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  margin: 0 auto;
+  display: block;
+}
+
+/* --- Blog Grid --- */
+.blog-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 30px;
+  padding-bottom: 30px;
+}
+
+/* --- Blog Card --- */
+.blog-article {
+  background-color: #080808;
+  border-radius: 12px;
+  border: 1.5px solid rgb(0, 110, 255);
+  padding: 20px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  position: relative;
+  max-height: 1000px;
+  overflow: hidden;
+  opacity: 1;
+  transition: all 0.4s ease-in-out;
+}
+
+.blog-article.visible {
+  opacity: 1;
+  max-height: 400px;
+  padding: 20px;
+  margin: 0;
+}
+
+.blog-article.hidden {
+  max-height: 0;
+  opacity: 0;
+  padding: 0;
+  margin: 0;
+  pointer-events: none;
+}
+
+/* --- Blog Text --- */
+.blog-text {
+  margin-bottom: 15px;
+  color: #f4f4f4;
+}
+
+/* --- Code Snippet --- */
+.snippet-container {
+  background-color: #111111;
+  border-radius: 8px;
+  padding: 10px;
+  margin: 20px 0;
+  position: relative;
+}
+
+.snippet-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 8px;
+}
+
+.language-tag {
+  background: #00bbd48f;
+  color: #fff;
+  font-size: 0.8em;
+  padding: 4px 10px;
+  border-radius: 5px;
+}
+
+/* --- Copy Button --- */
+.copy-btn {
+  background-color: #00bbd400;
+  border: none;
+  color: #0b1f3a;
+  padding: 6px 10px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 0.9em;
+  transition: background-color 0.3s ease;
+}
+
+.copy-btn:hover {
+  background-color: #00a2ba;
+}
+
+pre {
+  margin: 0;
+  padding: 0;
+  overflow-x: auto;
+}
+
+.code-content {
+  font-family: 'Courier New', monospace;
+  color: #f4f4f4;
+  font-size: 0.9em;
+  overflow-x: auto;
+  white-space: pre;
+  display: block;
+  padding: 8px;
+}
+
+.code-content::-webkit-scrollbar {
+  height: 6px;
+}
+
+.code-content::-webkit-scrollbar-thumb {
+  background-color: #555;
+  border-radius: 4px;
+}
+
+  /* <p>Developed by Vijay shikhre</p> --- */
+
+/* --- Read More Link --- */
+.read-more {
+  display: inline-block;
+  margin-top: 10px;
+  color: #00bcd4;
+  text-decoration: none;
+  font-weight: 600;
+  /* <p>Developed by Vijay shikhre</p> --- */
+
+  transition: color 0.3s ease;
+}
+
+.read-more:hover {
+  color: #0097a7;
+  text-decoration: underline;
+}
+
+/* --- Show More Button --- */
+.show-more-wrapper {
+  text-align: center;
+  margin-top: 40px;
+}
+
+#showMoreBtn,
+.show-more-btn {
+  background-color: #00bcd4;
+  color: #0b1f3a;
+  border: none;
+  padding: 12px 30px;
+  font-size: 1.1em;
+  border-radius: 8px;
+  cursor: pointer;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+  transition: background-color 0.3s ease;
+}
+
+#showMoreBtn:hover,
+.show-more-btn:hover {
+  background-color: #0097a7;
+}
+
+/* --- Responsive Enhancements --- */
+@media screen and (max-width: 992px) {
+  .blog-section {
+    padding: 60px 50px;
+  }
+
+  .blog-header h2 {
+    font-size: 2.2em;
+  }
+  
+}
+
+@media screen and (max-width: 768px) {
+  .blog-section {
+  /* <p>Developed by Vijay shikhre</p> --- */
+
+    padding: 50px 30px;
+  }
+
+  .blog-header h2 {
+    font-size: 2em;
+  }
+
+  .snippet-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+  /* <p>Developed by Vijay shikhre</p> --- */
+
+  }
+
+  .copy-btn {
+    align-self: flex-end;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .blog-section {
+    padding: 40px 20px;
+  }
+
+  .blog-header h2 {
+    font-size: 1.8em;
+  }
+
+  #searchInput {
+    font-size: 0.95em;
+  }
+
+  .copy-btn {
+    font-size: 0.85em;
+    padding: 5px 8px;
+  }
+
+  .code-content {
+    font-size: 0.85em;
+  }
+
+  #showMoreBtn,
+  .show-more-btn {
+    font-size: 1em;
+    padding: 10px 20px;
+  }
+}

@@ -1,0 +1,289 @@
+<section class="blog-section">
+    <div class="blog-header">
+        <h2>Tech Blogs & Articles</h2>
+        <input type="text" id="searchInput" placeholder="Search blog articles..." onkeyup="filterBlogs()">
+    </div>
+
+    <div class="blog-container" id="blogContainer">
+        
+        <!-- Blog 1 -->
+        <div class="blog-article">
+            <h3>1. What is SQL Injection?</h3>
+            <p class="blog-text">
+                SQL Injection is a critical vulnerability where attackers manipulate SQL queries by injecting malicious input. 
+                It can lead to unauthorized access to sensitive data.
+            </p>
+
+            <div class="snippet-container">
+                <div class="snippet-header">
+                    <span class="language-tag">JavaScript</span>
+                    <button class="copy-btn" onclick="copySnippet(this)">📋</button>
+                </div>
+                <pre><code class="code-content">
+const query = "SELECT * FROM users WHERE email = ?";
+db.query(query, [userEmail], (err, results) => {
+    if (err) throw err;
+    console.log(results);
+});
+                </code></pre>
+            </div>
+
+            <p class="blog-text">
+                Always use parameterized queries to prevent SQL Injection attacks effectively and safely.
+            </p>
+        </div>
+
+        <!-- Blog 2 -->
+        <div class="blog-article">
+            <h3>2. How to Secure APIs with JWT</h3>
+            <p class="blog-text">
+                JSON Web Tokens (JWTs) are a popular way to secure REST APIs by authenticating users and verifying their sessions securely.
+            </p>
+
+            <div class="snippet-container">
+                <div class="snippet-header">
+                    <span class="language-tag">Node.js</span>
+                    <button class="copy-btn" onclick="copySnippet(this)">📋</button>
+                </div>
+                <pre><code class="code-content">
+const token = jwt.sign({ id: user._id }, process.env.JWT_SECRET, { expiresIn: "1h" });
+                </code></pre>
+            </div>
+
+            <p class="blog-text">
+                Always store your secret keys safely and rotate JWTs periodically to enhance API security.
+            </p>
+        </div>
+
+        <!-- Blog 3 -->
+        <div class="blog-article">
+            <h3>3. Responsive Web Design Basics</h3>
+            <p class="blog-text">
+                Responsive design ensures your website looks good across all devices — mobile, tablet, and desktop.
+            </p>
+
+            <div class="snippet-container">
+                <div class="snippet-header">
+                    <span class="language-tag">CSS</span>
+                    <button class="copy-btn" onclick="copySnippet(this)">📋</button>
+                </div>
+                <pre><code class="code-content">
+@media (max-width: 768px) {
+    .container {
+        flex-direction: column;
+    }
+}
+                </code></pre>
+            </div>
+
+            <p class="blog-text">
+                Always use flexible layouts, media queries, and scalable images to build fully responsive websites.
+            </p>
+        </div>
+
+        <!-- Blog 4 -->
+        <div class="blog-article">
+            <h3>4. Basics of Hashing Passwords</h3>
+            <p class="blog-text">
+                Hashing passwords before storing them in the database adds a security layer against data breaches.
+            </p>
+
+            <div class="snippet-container">
+                <div class="snippet-header">
+                    <span class="language-tag">Python</span>
+                    <button class="copy-btn" onclick="copySnippet(this)">📋</button>
+                </div>
+                <pre><code class="code-content">
+import bcrypt
+
+password = "mypassword"
+hashed = bcrypt.hashpw(password.encode('utf-8'), bcrypt.gensalt())
+                </code></pre>
+            </div>
+
+            <p class="blog-text">
+                Always use strong hashing algorithms like bcrypt, scrypt, or Argon2 for password protection.
+            </p>
+        </div>
+
+        <!-- Blog 5 -->
+        <div class="blog-article">
+            <h3>5. Difference Between var, let and const</h3>
+            <p class="blog-text">
+                JavaScript offers multiple ways to declare variables: <code>var</code>, <code>let</code>, and <code>const</code>. 
+                Knowing their differences helps in writing better code.
+            </p>
+
+            <div class="snippet-container">
+                <div class="snippet-header">
+                    <span class="language-tag">JavaScript</span>
+                    <button class="copy-btn" onclick="copySnippet(this)">📋</button>
+                </div>
+                <pre><code class="code-content">
+var a = 10;    // Function scoped
+let b = 20;    // Block scoped
+const c = 30;  // Block scoped (constant)
+                </code></pre>
+            </div>
+
+            <p class="blog-text">
+                Prefer using <code>let</code> and <code>const</code> to avoid hoisting issues and accidental reassignments.
+            </p>
+        </div>
+
+    </div>
+</section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* --- Blog Section --- */
+.blog-section {
+    background-color: rgb(0, 0, 0);
+    color: #0b1f3a;
+    padding: 80px 40px;
+}
+
+.blog-header {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.blog-header h2 {
+    font-size: 2.8em;
+    color: #0b1f3a;
+    margin-bottom: 20px;
+}
+
+#searchInput {
+    width: 100%;
+    max-width: 500px;
+    padding: 12px;
+    font-size: 1em;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    margin: 0 auto;
+    display: block;
+}
+
+.blog-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+    gap: 40px;
+}
+
+/* Blog Article Styling */
+.blog-article {
+    background-color: #ffffff;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+}
+
+.blog-article h3 {
+    font-size: 1.8em;
+    margin-bottom: 15px;
+    color: #00bcd4;
+}
+
+.blog-text {
+    font-size: 1.1em;
+    line-height: 1.8;
+    color: #333;
+    margin-bottom: 25px;
+}
+
+/* Code Snippet */
+.snippet-container {
+    background-color: #1e1e1e;
+    border-radius: 12px;
+    padding: 20px;
+    margin: 25px 0;
+    position: relative;
+    box-shadow: 0 0 12px rgba(0, 0, 0, 0.2);
+    overflow-x: auto;
+}
+
+.snippet-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 12px;
+}
+
+.language-tag {
+    background-color: #00bcd4;
+    color: #0b1f3a;
+    font-size: 0.85em;
+    padding: 6px 12px;
+    border-radius: 20px;
+    font-weight: bold;
+}
+
+.copy-btn {
+    background-color: #00bcd4;
+    border: none;
+    color: #0b1f3a;
+    padding: 6px 12px;
+    border-radius: 6px;
+    font-size: 0.9em;
+    cursor: pointer;
+}
+.copy-btn:hover {
+    background-color: #00a2ba;
+}
+
+.code-content {
+    color: #f4f4f4;
+    font-family: "Fira Code", monospace;
+    font-size: 1em;
+    white-space: pre-wrap;
+    word-wrap: break-word;
+}
+
+
+
+
+
+
+
+
+
+
+// Copy Code Function
+function copySnippet(button) {
+    const code = button.closest('.snippet-container').querySelector('.code-content').innerText;
+    navigator.clipboard.writeText(code).then(() => {
+        button.innerText = "✅ Copied!";
+        setTimeout(() => {
+            button.innerText = "📋";
+        }, 2000);
+    }).catch(err => {
+        console.error("Copy failed:", err);
+        button.innerText = "❌ Failed";
+    });
+}
+
+// Search Blog Articles
+function filterBlogs() {
+    const input = document.getElementById("searchInput");
+    const filter = input.value.toLowerCase();
+    const blogContainer = document.getElementById("blogContainer");
+    const articles = blogContainer.getElementsByClassName("blog-article");
+
+    Array.from(articles).forEach(article => {
+        const text = article.innerText.toLowerCase();
+        article.style.display = text.includes(filter) ? "" : "none";
+    });
+}

@@ -1,0 +1,435 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" type="image/png" href="./assets/images/favicon_circular.png">
+  <title>CyberSecurity Club</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
+  <!-- <link rel="stylesheet" href="blog.css"> -->
+  <link rel="stylesheet" href="./blog/blog.css">
+
+  <link
+    rel="stylesheet"
+    href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+  />
+  
+
+
+
+
+</head>
+<body>
+
+    <header>
+        <nav id="navbar" class="navbar">
+            <div class="logo">
+                <a href="index.html"><img class="log" src="assets/images/logo.jpg" alt="Club Logo"></a>
+                <a href="index.html" class="ctf-title"> CyberSecurity Club</a>
+            </div>
+            <div class="hamburger" id="hamburger">&#9776;</div>           
+            <ul class="nav-links" id="navLinks">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#blogSection">Blogs</a></li>
+                <li><a href="#team">Our Team</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+    
+
+    <section id="home" class="hero">
+        <div class="hero-overlay">
+            <div class="hero-content">
+                <h1 class="typing-text"><span id="typed-text"></span><span class="cursor">|</span></h1>
+                <!-- <h1 class="fade-in-text">Securing Tomorrow, Today!!</h1> -->
+                <p class="slide-up-text cyber-para">
+                  We are a passionate group of students from <strong>GCOEJ, Jalgaon</strong>,<br>
+                  Driven by curiosity and committed to <strong>CyberSecurity Excellence</strong>.<br>
+                  Through <strong>CTFs</strong>, workshops, and real-world simulations,<br>
+                  We train and empower the next wave of <strong>ethical hackers</strong>.<br>
+                  Our club thrives on <strong>collaboration, innovation, and research</strong>,<br>
+                  Building a safer digital world—<em>one byte at a time</em>.
+                </p>
+                
+                <a href="#blogSection" class="cta">Discover More</a>
+            </div>
+        </div>
+    </section>
+    
+
+
+    <section id="about" class="about-section">
+        <div class="about-container">
+            <div class="about-text">
+                <h1>About Our CyberSecurity Club</h1>
+                <p>At GCOEJ College's CyberSecurity Club, we are dedicated to nurturing
+                  the skills of tomorrow's cybersecurity experts. Through engaging CTFs
+                  and practical workshops, we provide a platform for students to learn, grow,
+                  and challenge themselves. With guidance from 
+                  experienced mentors, we strive to build a community that is ready to
+                  tackle the evolving challenges of the digital world. Join us in 
+                  securing the cyberspace of tomorrow.
+                </p>
+
+                <ul>
+                    <li>Passionate team of cybersecurity students from GCOEJ, Jalgaon.</li>
+                    <li>Engaging in CTF challenges, workshops, and hands-on learning.</li>
+                    <li>Focus on ethical hacking, cryptography, and network security.</li>
+                    <li>Mentorship-driven environment for skill development.</li>
+                    <li>Collaboration fostering innovation and research.</li>
+                    <li>Preparing the next generation of cybersecurity professionals.</li>
+                </ul>
+            </div>
+            <div class="about-image">
+                <img src="assets/images/cyber-lab.jpg" alt="Cybersecurity Lab">
+            </div>
+        </div>
+    </section>
+
+    
+
+    <section class="blog-section" id="blogSection">
+      <div class="blogdiv">
+        <div class="blog-header">
+          <h2>Tech Articles & Tutorials</h2>
+          <input type="text" id="searchInput" placeholder="Search blog articles..." onkeyup="filterBlogs()">
+        </div>
+      
+        <div class="blog-container" id="blogContainer">
+          <!-- Blog 1 -->
+          <div class="blog-article visible">
+            <h3>1. What is SQL Injection?</h3>
+            <p class="blog-text">SQL Injection is a web security vulnerability that ...</p>
+      
+            <div class="snippet-container">
+              <div class="snippet-header">
+                <span class="language-tag">SQL</span>
+                <button class="copy-btn" onclick="copySnippet(this)">📋</button>
+              </div>
+              <pre><code class="code-content">
+      SELECT * FROM users WHERE email = 'user@example.com';
+              </code></pre>
+                          <!-- <p>Developed by Vijay shikhre</p> -->
+
+            </div>
+      
+            <p class="blog-text">Always use parameterized queries to prevent attacks...</p>
+            <a href="./blog/full-sql-injection.html" class="read-more">Read More →</a>
+          </div>
+      
+          <!-- Blog 2 -->
+          <div class="blog-article">
+            <h3>2. How to Secure APIs with JWT</h3>
+            <p class="blog-text">
+              JSON Web Tokens (JWTs) are ...
+
+            </p>
+      
+            <div class="snippet-container">
+              <div class="snippet-header">
+                <span class="language-tag">Node.js</span>
+                <button class="copy-btn" onclick="copySnippet(this)">📋</button>
+              </div>
+              <pre><code class="code-content">
+      const token = jwt.sign({ id: user._id }, process.env.JWT_SECRET, { expiresIn: "1h" });
+              </code></pre>
+            </div>
+      
+            <p class="blog-text">Always store your secret keys safely and rotate JWTs periodically to enhance API security.</p>
+            <a href="./blog/full-sql-injection.html" class="read-more">Read More →</a>
+          </div>
+      
+          <!-- Blog 3 -->
+          <div class="blog-article">
+            <h3>3. Responsive Web Design Basics</h3>
+            <p class="blog-text">
+              Responsive design ensures your ...
+            </p>
+      
+            <div class="snippet-container">
+              <div class="snippet-header">
+                <span class="language-tag">CSS</span>
+                <button class="copy-btn" onclick="copySnippet(this)">📋</button>
+              </div>
+              <pre><code class="code-content">
+        .container {
+          flex-direction: column;
+        }
+              </code></pre>
+            </div>
+      
+            <p class="blog-text">Always use flexible ...</p>
+            <a href="./blog/full-sql-injection.html" class="read-more">Read More →</a>
+          </div>
+      
+          <!-- Blog 4 -->
+          <div class="blog-article">
+            <h3>4. Basics of Hashing Passwords</h3>
+            <p class="blog-text">
+              Hashing passwords before storing ...
+            </p>
+      
+            <div class="snippet-container">
+              <div class="snippet-header">
+                <span class="language-tag">Python</span>
+                <button class="copy-btn" onclick="copySnippet(this)">📋</button>
+              </div>
+              <pre><code class="code-content">
+      import bcrypt
+      password = "mypassword"
+      hashed = bcrypt.hashpw(password.encode('utf-8'), bcrypt.gensalt())
+              </code></pre>
+            </div>
+      
+            <p class="blog-text">Always use strong ...</p>
+            <a href="./blog/full-sql-injection.html" class="read-more">Read More →</a>
+          </div>
+      
+          <!-- Blog 5 -->
+          <div class="blog-article">
+            <h3>5. Difference Between var, let and const</h3>
+            <p class="blog-text">
+              JavaScript offers multiple ways to ...
+            </p>
+      
+            <div class="snippet-container">
+              <div class="snippet-header">
+                <span class="language-tag">JavaScript</span>
+                <button class="copy-btn" onclick="copySnippet(this)">📋</button>
+              </div>
+              <pre><code class="code-content">
+      var a = 10;    // Function scoped let b = 20;    // Block scoped const c = 30;  // Block scoped (constant)
+              </code></pre>
+            <!-- <p>Developed by Vijay shikhre</p> -->
+              
+            </div>
+      
+            <p class="blog-text">Prefer using ...</p>
+            <a href="./blog/full-sql-injection.html" class="read-more">Read More →</a>
+          </div>
+        </div>
+      
+        <!-- Show More Button -->
+        <div style="text-align: center; margin-top: 30px;">
+          <button id="showMoreBtn" class="show-more-btn">Show More</button>
+        </div>
+
+      </div>
+    </section>
+      
+
+
+    <section class="team-section" id="team">
+        <h1>Meet Our Cybersecurity Team</h1>
+        <div class="swiper mySwiper">
+          <div class="swiper-wrapper">
+      
+            <div class="swiper-slide team-card">
+              <img src="assets/team/gitesh_bharambe .jpg" alt="Gitesh Bharambe">
+              <h3>Gitesh Bharambe</h3>
+              <p class="role">Captain</p>
+            </div>
+      
+            <div class="swiper-slide team-card">
+              <img src="assets/team/deshmukh.jpg" alt="Prathamesh Deshmukh">
+              <h3>Prathamesh Deshmukh</h3>
+              <p class="role">Vice-Captain</p>
+            </div>
+      
+            <div class="swiper-slide team-card">
+              <img src="assets/team/Aditya.jpg" alt="Aditya Dahibhate">
+              <h3>Aditya Dahibhate</h3>
+              <p class="role">Member</p>
+            </div>
+      
+            <div class="swiper-slide team-card">
+              <img src="assets/team/vijay_shikhre.jpg" alt="Vijay Shikhre">
+              <h3>Vijay Shikhre</h3>
+              <p class="role">Member</p>
+            </div>
+      
+            <div class="swiper-slide team-card">
+              <img src="assets/team/Pradeep_Bhale.JPG" alt="Pradeep Bhale">
+              <h3>Pradeep Bhale</h3>
+              <p class="role">Member</p>
+            </div>
+      
+            <div class="swiper-slide team-card">
+              <img src="assets/team/Gajbhiye_pranali.jpg" alt="Pranali Gajbhiye">
+              <h3>Pranali Gajbhiye</h3>
+              <p class="role">Member</p>
+            </div>
+      
+            <div class="swiper-slide team-card">
+              <img src="assets/team/Shradhha_raut.jpg" alt="Shraddha Raut">
+              <h3>Shraddha Raut</h3>
+              <p class="role">Member</p>
+            </div>
+      
+            <div class="swiper-slide team-card">
+              <img src="assets/team/shreyash_chavhan.jpg" alt="Shreyash Chavhan">
+              <h3>Shreyash Chavhan</h3>
+              <p class="role">Member</p>
+            </div>
+      
+            <div class="swiper-slide team-card">
+              <img src="assets/team/Purva_bhagwat.jpg" alt="Purva Bhagwat">
+              <h3>Purva Bhagwat</h3>
+              <p class="role">Member</p>
+            </div>
+      
+            <div class="swiper-slide team-card">
+              <img src="assets/team/Bhavana_patil.jpg" alt="Bhavana Patil">
+              <h3>Bhavana Patil</h3>
+              <p class="role">Member</p>
+            </div>
+
+            <div class="swiper-slide team-card">
+              <img src="assets/team/riya_nehete.jpg" alt="Ujwal Ramteke">
+              <h3>Riya Nehete</h3>
+              <p class="role">Member</p>
+            </div>
+      
+          </div>
+            <!-- Manual swipe buttons -->
+            <div class="swiper-button-prev">‹</div>
+            <div class="swiper-button-next">›</div>
+            <div class="swiper-pagination"></div>
+
+        </div>
+    </section>
+      
+
+
+    <section class="contact-section" id="contact">
+        <div class="contact-header">
+            <h1>Contact Us</h1>
+            <p>We're here to help you secure the future.
+              Reach out for membership, workshops, events, or collaborations.</p>
+        </div>
+    
+        <div class="contact-container">
+            <!-- Contact Info -->
+            <div class="contact-info">
+                <div class="info-box">
+                    <h3>📍 Address</h3>
+                    <p>Opp. Government ITI, National Highway No. 6,<br>Post: Jalgaon - 425 002, Maharashtra, India</p>
+                </div>
+                <div class="info-box">
+                    <h3>📞 Phone</h3>
+                    <p>+91 98754 46510</p>
+                </div>
+                <div class="info-box">
+                    <h3>📧 Email</h3>
+                    <p>gcoejcsclub@gmail.com</p>
+                </div>
+            </div>
+
+            <!-- Contact Form -->
+            <form class="contact-form" action="https://formsubmit.co/gcoejcsclub@gmail.com" method="POST">
+              <input type="text" name="name" placeholder="Your Name" required>
+              <input type="email" name="email" placeholder="Your Email" required>
+              <textarea name="message" rows="5" placeholder="Your Message" required></textarea>
+  
+              <!-- redirect to thank-you page after form submission -->
+               <input type="hidden" name="_next" value="http://localhost/CyberSecurityClub/Vijay%20Shikhre/thank-you.html">
+              <input type="hidden" name="_captcha" value="false">
+              <button type="submit">Send Message</button>
+            </form>
+
+        </div>
+    </section>
+    
+  
+    
+    <footer class="footer-section">
+        <div class="footer-container">
+            <!-- College Info -->
+            <div class="footer-about">
+                <h2>CyberSecurity Club</h2>
+                <p>
+                    Empowering the next generation of cybersecurity experts through innovation, education, and real-world training.
+                </p>
+            </div>
+    
+            <!-- Quick Links -->
+            <div class="footer-links">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#blogSection">Blog</a></li>
+                    <li><a href="#team">Team</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </div>
+
+
+            <div id="connect" class="connect-section">
+                <h2>Connect With Us</h2>
+                <div class="social-links">
+                    <a href="https://ctftime.org/team/374049" target="_blank" aria-label="CTFtime Team">
+                      <img src="./assets/images/ctftime.svg" alt="CTFtime Logo" style="height: 40px; width: auto;">
+                    </a>
+                  
+                    <a href="https://instagram.com/iamvijayshikhare" target="_blank" class="social-icon insta" aria-label="Instagram">
+                      <i class="fab fa-instagram"></i>
+                    </a>
+                </div>
+            </div>
+            
+        </div>
+    
+        <div class="footer-bottom">
+            <p>&copy; 2025 GCOEJ College. All rights are reserved.</p>
+            <p>Developed by Vijay shikhre</p>
+        </div>
+    </footer>
+    
+    <script src="js/script.js"></script>
+    <script src="./blog/blog.js" defer></script>
+
+    <script src="ctf-writeups-master/assets/js/overlay.js"></script>
+
+    
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script>
+      // Initialize Swiper
+      const swiper = new Swiper('.swiper', {
+        slidesPerView: 3,
+        spaceBetween: 30,
+        loop: true,
+        autoplay: {
+          delay: 3000,
+          disableOnInteraction: false,
+        },
+        navigation: {
+          nextEl: '.swiper-button-next',
+          prevEl: '.swiper-button-prev',
+        },
+        pagination: {
+          el: '.swiper-pagination',
+          clickable: true,
+        },
+        breakpoints: {
+          1024: {
+            slidesPerView: 3,
+          },
+          768: {
+            slidesPerView: 2,
+          },
+          480: {
+            slidesPerView: 1,
+          },
+        },
+      });
+    
+
+    </script>
+    
+      
+</body>
+</html>

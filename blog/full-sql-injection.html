@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>What is SQL Injection?</title>
+
+  <!-- Link to shared blog styles -->
+  <link rel="stylesheet" href="blog.css" />
+
+  <style>
+    body {
+      background-color: #000;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+
+    .blog-detail {
+      max-width: 900px;
+      margin: 60px auto;
+      padding: 30px;
+      background-color: #080808;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    }
+
+    .back-link {
+      display: inline-block;
+      margin-bottom: 25px;
+      color: #00bcd4;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 1em;
+      transition: color 0.3s ease;
+    }
+
+    .back-link:hover {
+      text-decoration: underline;
+      color: #0097a7;
+    }
+
+    .blog-detail h1 {
+      color: #00bcd4;
+      font-size: 2em;
+      margin-bottom: 20px;
+    }
+
+    .blog-detail p {
+      color: #fff9f9;
+      font-size: 1em;
+      line-height: 1.7;
+      margin-bottom: 18px;
+    }
+
+    .snippet-container {
+      background-color: #111111;
+      border-radius: 8px;
+      padding: 10px;
+      margin: 20px 0;
+      overflow-x: auto;
+    }
+
+    .snippet-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 8px;
+    }
+
+    .language-tag {
+      background: #00bbd48f;
+      color: #fff;
+      font-size: 0.8em;
+      padding: 4px 10px;
+      border-radius: 5px;
+    }
+
+    .copy-btn {
+      background: transparent;
+      border: none;
+      font-size: 1.2em;
+      cursor: pointer;
+      color: #fff;
+      margin-left: auto;
+      transition: opacity 0.3s;
+    }
+
+    .copy-btn:hover {
+      opacity: 0.7;
+    }
+
+    pre {
+      margin: 0;
+    }
+
+    .code-content {
+      font-family: 'Courier New', monospace;
+      font-size: 0.9em;
+      color: #f4f4f4;
+      white-space: pre;
+      overflow-x: auto;
+      display: block;
+      padding: 8px 0;
+    }
+
+    /* Responsive Layout */
+    @media (max-width: 992px) {
+      .blog-detail {
+        margin: 50px 30px;
+        padding: 25px;
+      }
+
+      .blog-detail h1 {
+        font-size: 1.8em;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .blog-detail {
+        margin: 40px 20px;
+        padding: 20px;
+      }
+
+      .blog-detail h1 {
+        font-size: 1.6em;
+      }
+
+      .snippet-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 6px;
+      }
+
+      .copy-btn {
+        align-self: flex-end;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .blog-detail {
+        margin: 30px 15px;
+        padding: 18px;
+      }
+
+      .blog-detail h1 {
+        font-size: 1.4em;
+      }
+
+      .code-content {
+        font-size: 0.85em;
+      }
+
+      .copy-btn {
+        font-size: 1em;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="blog-detail">
+    <a href="../index.html#blogSection" class="back-link">← Back to Blogs</a>
+    <h1>What is SQL Injection?</h1>
+
+    <p>
+      SQL Injection is a web security vulnerability that allows an attacker to interfere with the queries that an application makes to its database.
+      It generally allows an attacker to view data that they are not normally able to retrieve.
+    </p>
+
+    <p>
+      This might include data belonging to other users, or any other data that the application itself is able to access.
+      In many cases, SQL Injection can allow an attacker to modify or delete this data, causing persistent changes to the application’s content or behavior.
+    </p>
+
+    <p><strong>Example of a vulnerable query:</strong></p>
+    <div class="snippet-container">
+      <div class="snippet-header">
+        <span class="language-tag">SQL</span>
+        <button class="copy-btn" onclick="copySnippet(this)">📋</button>
+      </div>
+      <pre><code class="code-content">SELECT * FROM users WHERE email = 'user@example.com';</code></pre>
+    </div>
+
+    <p>If the input is not sanitized, a malicious user might enter this as email:</p>
+    <div class="snippet-container">
+      <div class="snippet-header">
+        <span class="language-tag">SQL</span>
+        <button class="copy-btn" onclick="copySnippet(this)">📋</button>
+      </div>
+      <pre><code class="code-content">' OR '1'='1</code></pre>
+    </div>
+
+    <p>This would change the query to:</p>
+    <div class="snippet-container">
+      <div class="snippet-header">
+        <span class="language-tag">SQL</span>
+        <button class="copy-btn" onclick="copySnippet(this)">📋</button>
+      </div>
+      <pre><code class="code-content">SELECT * FROM users WHERE email = '' OR '1'='1';</code></pre>
+    </div>
+
+    <p>Which returns all users, bypassing login restrictions.</p>
+
+    <p>
+      To prevent SQL Injection, always use <strong>parameterized queries</strong> or prepared statements. Here’s an example using a secure method:
+    </p>
+    <div class="snippet-container">
+      <div class="snippet-header">
+        <span class="language-tag">JavaScript</span>
+        <button class="copy-btn" onclick="copySnippet(this)">📋</button>
+      </div>
+      <pre><code class="code-content">const userEmail = req.body.email;
+const query = 'SELECT * FROM users WHERE email = ?';
+connection.query(query, [userEmail], function(err, results) {
+  // safe query execution
+});</code></pre>
+    </div>
+
+    <p>Always validate and sanitize inputs and avoid directly inserting user input into SQL strings.</p>
+  </div>
+
+  <script>
+    function copySnippet(button) {
+      const code = button.closest('.snippet-container').querySelector('.code-content').innerText;
+      navigator.clipboard.writeText(code).then(() => {
+        button.textContent = '✅';
+        setTimeout(() => {
+          button.textContent = '📋';
+        }, 2000);
+      });
+    }
+  </script>
+</body>
+</html>
