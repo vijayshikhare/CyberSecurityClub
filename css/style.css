@@ -888,6 +888,19 @@ a[aria-label="CTFtime Team"] img:hover {
     color: #888;
 }
 
+
+footer a {
+  color: #00bfff; /* Soft sky blue */
+  text-decoration: none;
+  font-weight: 500;
+}
+
+footer a:hover {
+  color: #1e90ff; /* Slightly brighter on hover */
+  text-decoration: underline;
+}
+
+
 /* --- Responsive Adjustments --- */
 @media screen and (max-width: 992px) {
     .footer-about h2,
