@@ -51,7 +51,7 @@
 
 .blog-article.visible {
   opacity: 1;
-  max-height: 400px;
+  max-height: none;
   padding: 20px;
   margin: 0;
 }
@@ -83,7 +83,10 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
+  flex-wrap: nowrap;
   margin-bottom: 8px;
+  gap: 10px; /* Optional spacing between elements */
+  min-width: 0; /* prevents overflow in narrow flexbox */
 }
 
 .language-tag {
@@ -92,19 +95,24 @@
   font-size: 0.8em;
   padding: 4px 10px;
   border-radius: 5px;
+  white-space: nowrap;
+  flex-shrink: 1; /* Allows shrinking if space is tight */
 }
 
-/* --- Copy Button --- */
 .copy-btn {
-  background-color: #00bbd400;
+  background-color: transparent;
   border: none;
   color: #0b1f3a;
-  padding: 6px 10px;
+  padding: 4px 8px;
   border-radius: 6px;
   cursor: pointer;
-  font-size: 0.9em;
+  font-size: 1.1em;
   transition: background-color 0.3s ease;
+  white-space: nowrap;
+  flex-shrink: 0;
+  align-self: center;
 }
+
 
 .copy-btn:hover {
   background-color: #00a2ba;
@@ -202,15 +210,13 @@ pre {
   }
 
   .snippet-header {
-    flex-direction: column;
-    align-items: flex-start;
+    flex-direction: row;        /* ✅ Keep it horizontal */
+    align-items: center;        /* ✅ Align items properly */
     gap: 8px;
-  /* <p>Developed by Vijay shikhre</p> --- */
-
   }
 
   .copy-btn {
-    align-self: flex-end;
+    align-self: center;         /* ✅ Ensure vertical alignment */
   }
 }
 
@@ -227,9 +233,24 @@ pre {
     font-size: 0.95em;
   }
 
+  .snippet-header {
+    flex-direction: row;     /* ✅ Keep horizontal */
+    align-items: center;     /* ✅ Align properly */
+    gap: 6px;
+    flex-wrap: nowrap;       /* ✅ Prevent wrapping */
+  }
+
+  .language-tag {
+    font-size: 0.75em;
+    padding: 3px 8px;
+    flex-shrink: 1;
+  }
+
   .copy-btn {
-    font-size: 0.85em;
-    padding: 5px 8px;
+    font-size: 0.95em;
+    padding: 4px 6px;
+    align-self: center;
+    flex-shrink: 0;
   }
 
   .code-content {
