@@ -80,9 +80,9 @@ Developed by [Vijay Shikhre](https://github.com/vijayshikhare)
 
 Cybersecurity student club, ethical hacking workshops, CTF practice platform, college cybersecurity group, ethical hacking blog, GCOEJ cyber community, web security learning, Python hacking scripts, OWASP training, network penetration testing, bug bounty, cybersecurity events India, cybersecurity awareness club, learn hacking in college, GitHub hacking club project
 
-
 ## 🌐 Popular Tags
-#CyberSecurityClub #EthicalHacking #CTFChallenges
-#GCOEJ #StudentCyberSec #CybersecurityIndia
-#WebSecurity #PythonHacking #OWASP #GitHubEducation
-#InfoSecStudents #CaptureTheFlag #CollegeHackers
+
+`#CyberSecurityClub` `#EthicalHacking` `#CTFChallenges`  
+`#GCOEJ` `#StudentCyberSec` `#CybersecurityIndia`  
+`#WebSecurity` `#PythonHacking` `#OWASP` `#GitHubEducation`  
+`#InfoSecStudents` `#CaptureTheFlag` `#CollegeHackers`
